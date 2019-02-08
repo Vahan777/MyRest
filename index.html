@@ -29,6 +29,44 @@
                 <li><a href="#" id="men">Menu</a></li>
                 <li><a href="#" id="rev">Reviews</a></li>
                 <li><a href="#" id="res">Reservation</a></li>
+		<script>
+			  window.fbAsyncInit = function() {
+			    FB.init({
+			      appId      : '{your-app-id}',
+			      cookie     : true,
+			      xfbml      : true,
+			      version    : '{api-version}'
+			    });
+
+			    	FB.AppEvents.logPageView(); 
+				FB.getLoginStatus(function(response) {
+    					statusChangeCallback(response);
+				});
+				response{
+				    status: 'connected',
+				    authResponse: {
+					accessToken: '...',
+					expiresIn:'...',
+					signedRequest:'...',
+					userID:'...'
+				    }
+				}
+				  function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+
+			  };
+			
+			  (function(d, s, id){
+			     var js, fjs = d.getElementsByTagName(s)[0];
+			     if (d.getElementById(id)) {return;}
+			     js = d.createElement(s); js.id = id;
+			     js.src = "https://connect.facebook.net/en_US/sdk.js";
+			     fjs.parentNode.insertBefore(js, fjs);
+			   }(document, 'script', 'facebook-jssdk'));
+		</script>
             </ul>
             <div class="nav-share">
                 <a href="https://twitter.com/?lang=ru" target="_blank"><img src="images/twitter.png" alt="twitter"></a>
